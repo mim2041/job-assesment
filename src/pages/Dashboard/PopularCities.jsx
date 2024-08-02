@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { set } from "react-hook-form";
 
 const PopularCities = () => {
     const [ data, setData ] = useState([]);
@@ -17,8 +16,6 @@ const PopularCities = () => {
     if(data?.length == 0) {
         return <div>Loading...</div>
     }
-
-    const last = data?.length - 1 && data?.length - 2 && data?.length - 3;
 
     return (
         <div className="">
