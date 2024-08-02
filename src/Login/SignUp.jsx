@@ -3,6 +3,7 @@ import signup_image from "../assets/images/Rectangle 9593.png";
 import { useState } from "react";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
     const { 
@@ -19,7 +20,7 @@ const SignUp = () => {
     const [ showConfirmPassword, setShowConfirmPassword ] = useState(false);
 
     return (
-        <div className="flex items-center justify-between lg:px-36 h-screen my-20 gap-28">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:px-36 h-screen my-20 gap-28">
             <div className="">
                 <h1 className="text-[40px] text-[#4285F3] ">LOGO</h1>
                 <h2 className="text-[30px] font-semibold mt-4 mb-3">Sign In To Your Account</h2>
@@ -39,16 +40,16 @@ const SignUp = () => {
                             {errors.username&& <span className="text-red-600">User Name is required</span>}
                         </div>
                         <div className="flex flex-col gap-2 mb-4">
-                            <label htmlFor="name" className="font-semibold text-md">Email</label>
-                            <input type="text" id="name" placeholder="Enter your email" 
+                            <label htmlFor="email" className="font-semibold text-md">Email</label>
+                            <input type="text" id="email" placeholder="Enter your email" 
                                 className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
                                 {...register("email", { required: true })}
                             />
                             {errors.email && <span className="text-red-600">Email is required</span>}
                         </div>
                         <div className="flex flex-col gap-2 mb-4 relative">
-                            <label htmlFor="name" className="font-semibold text-md">Password</label>
-                            <input type={showPassword ? "text" : "password"} id="name" placeholder="@username" 
+                            <label htmlFor="password" className="font-semibold text-md">Password</label>
+                            <input type={showPassword ? "text" : "password"} id="password" placeholder="@username" 
                                 className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
                                 {...register("password", { required: true })}
                             />
@@ -67,8 +68,8 @@ const SignUp = () => {
 
                         </div>
                         <div className="flex flex-col gap-2 mb-4 relative">
-                            <label htmlFor="name" className="font-semibold text-md">Confirm Password</label>
-                            <input type={showConfirmPassword ? "text" : "password"} id="name" placeholder="Re-type password" 
+                            <label htmlFor="confirm_password" className="font-semibold text-md">Confirm Password</label>
+                            <input type={showConfirmPassword ? "text" : "password"} id="confirm_password" placeholder="Re-type password" 
                                 className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
                                 {...register("confirm_password", { required: true })}
                             />
@@ -97,7 +98,7 @@ const SignUp = () => {
                     <div className="flex items-center justify-center">
                         <p>
                             Already Have an Account? {"  "}
-                            <a href="/sign-up" className="text-[#156BCA] font-semibold underline">Log in</a>
+                            <Link to="/login" className="text-[#156BCA] font-semibold underline">Log in</Link>
                         </p>
                     </div>
                 </div>

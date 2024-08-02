@@ -3,7 +3,12 @@ import React from 'react';
 const Home = () => {
     return (
         <div>
-            <p>This is home</p>
+            {/* for Desktop view */}
+            <div>
+                <div>
+                    
+                </div>
+            </div>
         </div>
     );
 };
