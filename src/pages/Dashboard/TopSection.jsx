@@ -3,7 +3,7 @@ import spa from '../../assets/images/Group 1000001700.png';
 
 const TopSection = () => {
     return (
-        <div style={{fontFamily: 'Poppins, sans-serif'}} className='bg-white m-6 rounded-lg px-6 py-4 flex items-center justify-between'>
+        <div className='bg-white rounded-lg px-6 py-4 flex items-center justify-between'>
             <div>
                 <h3 className='text-[#152A16] text-[20px] font-[500] '>I'm Looking for Massage Therapist Near...</h3>
                 <p className='text-[15px]'>
