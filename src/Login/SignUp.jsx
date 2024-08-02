@@ -22,7 +22,7 @@ const SignUp = () => {
     return (
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:px-36 h-screen my-20 gap-28">
             <div className="">
-                <h1 className="text-[40px] text-[#4285F3] ">LOGO</h1>
+                <h1 style={{fontFamily: "Poor Richard"}} className="text-[40px] text-[#4285F3] ">LOGO</h1>
                 <h2 className="text-[30px] font-semibold mt-4 mb-3">Sign In To Your Account</h2>
                 <p className="text-[#5C635A]">
                     Welcome Back! By click the sign up button, you're agree <br />to Zenitood Terms and Service and acknlowledge the <br />
