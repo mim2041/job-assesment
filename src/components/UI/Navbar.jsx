@@ -6,7 +6,7 @@ import logout from "../../assets/images/Group 1000001685.png";
 
 const Navbar = () => {
     return (
-        <div className='h-20  px-8 py-5 flex items-center justify-between border-b'>
+        <div className='h-20  px-8 py-5 flex items-center justify-between border-b bg-white'>
             <div className='flex items-center justify-center gap-4'>
                 <div>
                     <img src={profile} alt="" className='w-12 h-12 rounded-full'/>

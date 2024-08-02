@@ -6,7 +6,7 @@ const DashboardLayout = () => {
     return (
         <div className='grid grid-cols-12'>
             <Sidebar />
-            <div className='col-span-10 h-[200vh]'>
+            <div className='col-span-10 h-[200vh] bg-[#EEF2F5]'>
                 <Navbar />
                 <Outlet />
             </div>
