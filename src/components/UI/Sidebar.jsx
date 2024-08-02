@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
-        <div className=' py-12 border col-span-2'>
+        <div className='border sticky top-0 left-0 overflow-auto py-12 col-span-2'>
             <h1 style={{fontFamily: "Poor Richard"}} className="text-[40px] text-[#4285F3] text-center">LOGO</h1>
 
             <nav className='py-8 flex flex-col'>
