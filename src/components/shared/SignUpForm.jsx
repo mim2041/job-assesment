@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AiOutlineEyeInvisible } from 'react-icons/ai';
 import { BsEye } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const SignUpForm = () => {
     const [ showPassword, setShowPassword ] = useState(false);
@@ -20,32 +21,32 @@ const SignUpForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="flex flex-col gap-2 mb-4">
-                            <label htmlFor="name" className="font-semibold text-md">Name</label>
-                            <input type="text" id="name" placeholder="@username" 
-                                className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
-                                {...register("username", { required: true })}
-                            />
-                            {errors.username&& <span className="text-red-600">User Name is required</span>}
-                        </div>
-                        <div className="flex flex-col gap-2 mb-4">
-                            <label htmlFor="email" className="font-semibold text-md">Email</label>
-                            <input type="text" id="email" placeholder="Enter your email" 
-                                className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
-                                {...register("email", { required: true })}
-                            />
-                            {errors.email && <span className="text-red-600">Email is required</span>}
-                        </div>
-                        <div className="flex flex-col gap-2 mb-4 relative">
-                            <label htmlFor="password" className="font-semibold text-md">Password</label>
-                            <input type={showPassword ? "text" : "password"} id="password" placeholder="@username" 
-                                className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
-                                {...register("password", { required: true })}
-                            />
-                            {errors.password && <span className="text-red-600">Password is required</span>}
+                <div className="flex flex-col gap-2 mb-4">
+                    <label htmlFor="name" className="font-semibold text-md">Name</label>
+                    <input type="text" id="name" placeholder="@username" 
+                        className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
+                        {...register("username", { required: true })}
+                    />
+                    {errors.username&& <span className="text-red-600">User Name is required</span>}
+                </div>
+                <div className="flex flex-col gap-2 mb-4">
+                    <label htmlFor="email" className="font-semibold text-md">Email</label>
+                    <input type="text" id="email" placeholder="Enter your email" 
+                        className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
+                        {...register("email", { required: true })}
+                    />
+                    {errors.email && <span className="text-red-600">Email is required</span>}
+                </div>
+                <div className="flex flex-col gap-2 mb-4 relative">
+                    <label htmlFor="password" className="font-semibold text-md">Password</label>
+                    <input type={showPassword ? "text" : "password"} id="password" placeholder="@username" 
+                        className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
+                        {...register("password", { required: true })}
+                    />
+                    {errors.password && <span className="text-red-600">Password is required</span>}
 
                             {/* show password toggle button */}
-                            <div className="absolute lg:right-4 top-11">
+                            <div className="absolute right-4 top-11">
                                 <button onClick={() => setShowPassword(!showPassword)}>
                                 {
                                     showPassword ? 
@@ -65,7 +66,7 @@ const SignUpForm = () => {
                             {errors.confirm_password && <span className="text-red-600">Password did not match</span>}
 
                             {/* show password toggle button */}
-                            <div className="absolute lg:right-4 top-11">
+                            <div className="absolute right-4 top-11">
                                 <button onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
                                 {
                                     showConfirmPassword ? 
@@ -80,10 +81,16 @@ const SignUpForm = () => {
                             <input type="checkbox" id="terms" />
                             <label htmlFor="terms" className="text-[#5C635A]"><a href="/sign-up" className="text-[#4285F3] ">Accept Terms of Service</a></label>
                         </div>
-                        <div className="mt-8 mb-5 flex items-center justify-center">
+                        <div className="mt-8 mb-3 md:mb-5 flex items-center justify-center">
                             <button className="bg-[#4285F3] py-3 rounded-lg text-white px-24 font-semibold">Sign up</button>
                         </div>
                     </form>
+            <div className="flex items-center justify-center">
+                                <p>
+                                    Already Have an Account? {"  "}
+                                    <Link to="/login" className="text-[#156BCA] font-semibold underline">Log in</Link>
+                                </p>
+                            </div>
         </div>
     );
 };
