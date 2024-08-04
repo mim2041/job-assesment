@@ -69,7 +69,7 @@ const SignUpForm = () => {
             Email
           </label>
           <input
-            type="text"
+            type="email"
             id="email"
             placeholder="Enter your email"
             className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "

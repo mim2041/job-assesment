@@ -7,7 +7,8 @@ import { useContext } from "react";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const { displayName, email, photoURL } = user;
+  const { displayName, photoURL } = user;
+  console.log(user.email);
 
   console.log(user.reloadUserInfo);
   const handleLogOut = () => {
@@ -31,7 +32,7 @@ const Navbar = () => {
             <p className="font-semibold">{displayName}</p>
             <RiArrowDropDownLine className=" font-light" />
           </div>
-          <p className="text-[+#5C635A] text-sm">{email}</p>
+          <p className="text-[+#5C635A] text-sm">{user.email}</p>
         </div>
       </div>
       <div className="flex gap-4">

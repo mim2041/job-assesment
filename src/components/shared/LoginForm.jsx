@@ -6,6 +6,7 @@ import { BsEye } from "react-icons/bs";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import SocialLogin from "./SocialLogin";
+import Swal from "sweetalert2";
 
 const LoginForm = () => {
   const {
@@ -14,7 +15,7 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
   const [showPassword, setShowPassword] = useState(false);
-
+  const [isLoader, setIsLoader] = useState(false);
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -23,16 +24,25 @@ const LoginForm = () => {
   const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
+    setIsLoader(true);
     const { email, password } = data;
     console.log(data);
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setIsLoader(false);
         navigate(from, { replace: true });
       })
       .catch((error) => {
+        // Handle Error using swal
+        setIsLoader(false);
         console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.message,
+        });
       });
   };
 
@@ -64,7 +74,7 @@ const LoginForm = () => {
               Email
             </label>
             <input
-              type="text"
+              type="email"
               id="email"
               placeholder="Enter your email"
               className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
@@ -81,7 +91,7 @@ const LoginForm = () => {
             <input
               type={showPassword ? "text" : "password"}
               id="password"
-              placeholder="@username"
+              placeholder="******"
               className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
               {...register("password", { required: true })}
             />
@@ -99,20 +109,31 @@ const LoginForm = () => {
               <div className="flex items-center gap-2">
                 <input type="checkbox" id="terms" />
                 <label htmlFor="terms" className="text-[#5C635A]">
-                  <a href="/sign-up" className="text-[#4285F3] ">
-                    Remember me
-                  </a>
+                  Remember me
                 </label>
               </div>
               <p className="text-[#4285F3] underline">
-                <Link>Forgot password?</Link>
+                <Link to="/forgot-password">Forgot password?</Link>
               </p>
             </div>
 
             <div className="mt-12 md:mt-8 md:mb-5 flex items-center justify-center">
-              <button className="bg-[#4285F3] py-3 rounded-lg text-white px-24 font-semibold">
-                Sign in
-              </button>
+              {isLoader ? (
+                <button
+                  type="submit"
+                  className="bg-[#156BCA] text-white w-full py-3 rounded-lg"
+                  disabled
+                >
+                  Loading...
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className="bg-[#156BCA] text-white w-full py-3 rounded-lg"
+                >
+                  Log In
+                </button>
+              )}
             </div>
           </div>
         </form>
