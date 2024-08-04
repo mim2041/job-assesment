@@ -16,7 +16,7 @@ const Testimonials = () => {
 
   return (
     <div className="w-full ">
-      <h3 className="text-[18px] font-[500px] mb-2">Featured Testimonial</h3>
+      <h3 className="text-[18px] font-[500px] pl-2 md:pl-0">Featured Testimonial</h3>
 
       <VerticalSwiper reviews={data} />
     </div>

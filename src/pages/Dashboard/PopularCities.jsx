@@ -19,13 +19,13 @@ const PopularCities = () => {
 
     return (
         <div className="">
-            <h3 className='text-[18px] font-[500px] mb-2'>Popular Cities</h3>
+            <h3 className='text-[18px] font-[500px] mb-5'>Popular Cities</h3>
 
             <div className="bg-white grid grid-cols-3 justify-between items-center border border-b-2 rounded-lg">
                 {
                     data?.map((city) => (
-                        <div key={city?.id} className=" mb-4">
-                            <p className={`text-[#156BCA] underline text-[14px] px-6 py-3 ${city?.id && parseInt(city?.id) < 4 ? "mt-6" : ""}`}>{city?.name}</p>
+                        <div key={city?.id} className=" mb-3">
+                            <p className={`text-[#156BCA] underline text-[14px] px-6 py-3 ${city?.id && parseInt(city?.id) < 4 ? "mt-4" : ""}`}>{city?.name}</p>
                             {
                                 city?.id < 19 ? <hr className="mt-3"/> : ""
                             }

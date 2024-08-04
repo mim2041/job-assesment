@@ -16,7 +16,7 @@ const VerticalSwiper = ({ reviews }) => {
 
   return (
     <div>
-      <div className="lg:mt-5 max-w-7xl mx-auto p-3 lg:p-0">
+      <div className="lg:mt-5  max-w-7xl mx-auto p-3 lg:p-0">
         <Swiper
           slidesPerView={1}
           spaceBetween={20}

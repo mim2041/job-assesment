@@ -11,7 +11,7 @@ const Dashboard = () => {
     >
       <TopSection />
       <FeaturedTherapist />
-      <div className="lg:flex gap-6 m-2 lg:m-0">
+      <div className="lg:flex gap-6 md:m-2 lg:m-0">
         <div className="lg:w-1/2">
           <Testimonials />
         </div>
