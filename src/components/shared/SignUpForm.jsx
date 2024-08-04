@@ -19,8 +19,19 @@ const SignUpForm = () => {
 
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  const [isLoader, setIsLoader] = useState(false);
   const onSubmit = (data) => {
+    // password validation
+    if (data.password !== data.confirm_password) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password did not match",
+      });
+      return;
+    }
+    setIsLoader(true);
+
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
@@ -33,6 +44,7 @@ const SignUpForm = () => {
           };
           console.log(userInfo);
           reset();
+          setIsLoader(false);
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -42,8 +54,30 @@ const SignUpForm = () => {
           });
           navigate("/");
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          setIsLoader(false);
+          console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.message,
+          });
+        });
     });
+  };
+
+  // handle accept term and condition
+
+  const [terms, setTerms] = useState(false);
+  const handleAcceptTerms = () => {
+    const terms = document.getElementById("terms");
+    if (terms.checked) {
+      console.log("Terms Accepted");
+      setTerms(true);
+    } else {
+      console.log("Please accept the terms");
+      setTerms(false);
+    }
   };
 
   return (
@@ -56,7 +90,7 @@ const SignUpForm = () => {
           <input
             type="text"
             id="name"
-            placeholder="@username"
+            placeholder="Full Name"
             className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
             {...register("displayName", { required: true })}
           />
@@ -86,7 +120,7 @@ const SignUpForm = () => {
           <input
             type={showPassword ? "text" : "password"}
             id="password"
-            placeholder="@username"
+            placeholder="*******"
             className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "
             {...register("password", { required: true })}
           />
@@ -126,17 +160,30 @@ const SignUpForm = () => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <input type="checkbox" id="terms" />
+          <input type="checkbox" id="terms" onClick={handleAcceptTerms} />
           <label htmlFor="terms" className="text-[#5C635A]">
-            <a href="/sign-up" className="text-[#4285F3] ">
-              Accept Terms of Service
-            </a>
+            Accept Terms of Service
           </label>
         </div>
         <div className="mt-8 mb-3 md:mb-5 flex items-center justify-center">
-          <button className="bg-[#4285F3] py-3 rounded-lg text-white px-24 font-semibold">
-            Sign up
-          </button>
+          {isLoader ? (
+            <button
+              type="submit"
+              className="bg-[#156BCA] text-white w-full py-3 rounded-lg"
+              disabled
+            >
+              Loading...
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className={`bg-[#156BCA] text-white w-full py-3 rounded-lg ${
+                terms ? "cursor-pointer" : "disabled:true cursor-not-allowed"
+              }`}
+            >
+              Sign Up
+            </button>
+          )}
         </div>
       </form>
       <div className="flex items-center justify-center">

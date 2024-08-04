@@ -1,56 +1,56 @@
 {
     "therapists": [
         {
-            "image": "./images/image 116.png",
+            "image": "https://i.ibb.co/L1QJKjn/image-116.png",
             "name": "Dr. Jane Doe",
             "address": "123 Elm Street, New York",
             "profession": "Clinical Psychologist",
             "details": "Specializes in cognitive behavioral therapy and anxiety disorders."
         },
         {
-            "image": "./images/image 116 (1).png",
+            "image": "https://i.ibb.co/DgjCtgH/image-116-1.png",
             "name": "John Smith, LCSW",
             "address": "789 Maple Drive, NY",
             "profession": "Licensed Clinical Social Worker",
             "details": "Expert in family therapy and child psychology."
         },
         {
-            "image": "./images/image 116 (2).png",
+            "image": "https://i.ibb.co/hmJJBX5/image-116-2.png",
             "name": "Dr. Emily Johnson",
             "address": "789 Maple Drive, NY",
             "profession": "Psychiatrist",
             "details": "Focuses on depression treatment and mindfulness-based stress reduction."
         },
         {
-            "image": "./images/image 116 (3).png",
+            "image": "https://i.ibb.co/RyG1HP0/image-116-3.png",
             "name": "Dr. Michael Brown",
             "address": "789 Maple Drive, NY",
             "profession": "Clinical Psychologist",
             "details": "Specializes in PTSD and trauma-focused therapy."
         },
         {
-            "image": "./images/image 116.png",
+            "image": "https://i.ibb.co/L1QJKjn/image-116.png",
             "name": "Sarah Williams, LPC",
             "address": "789 Maple Drive, NY",
             "profession": "Licensed Professional Counselor",
             "details": "Experienced in couples counseling and relationship issues."
         },
         {
-            "image": "./images/image 116 (1).png",
+            "image": "https://i.ibb.co/DgjCtgH/image-116-1.png",
             "name": "David Martinez, PhD",
             "address": "Pine Street, San Fran",
             "profession": "Clinical Psychologist",
             "details": "Focuses on addiction recovery and substance abuse counseling."
         },
         {
-            "image": "./images/image 116 (2).png",
+            "image": "https://i.ibb.co/hmJJBX5/image-116-2.png",
             "name": "Laura Davis, MFT",
             "address": "Pine Street, San Fran",
             "profession": "Marriage and Family Therapist",
             "details": "Specializes in marriage counseling and family dynamics."
         },
         {
-            "image": "./images/image 116 (3).png",
+            "image": "https://i.ibb.co/RyG1HP0/image-116-3.png",
             "name": "Mark Wilson, LPC",
             "address": "Pine Street, San Fran",
             "profession": "Licensed Professional Counselor",

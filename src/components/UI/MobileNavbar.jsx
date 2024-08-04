@@ -50,25 +50,25 @@ const MobileNavbar = () => {
 const Drawer = ({ toggleDrawer }) => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="drawer-overlay" onClick={toggleDrawer}>
+    <div className="drawer-overlay " onClick={toggleDrawer}>
       <div className="drawer" onClick={(e) => e.stopPropagation()}>
         <button className="close-drawer" onClick={toggleDrawer}>
           &times;
         </button>
         <div className="drawer-content">
-          <div className="bg-blue-700 h-40">
-            <div className="flex items-center justify-center gap-4">
+          <div className="bg-blue-700 pt-32 pb-20 h-[300px] relative">
+            <div className="flex items-center flex-col justify-end gap-4">
               <div>
                 <img
-                  src={user?.photoURL || "https://"}
+                  src={user?.photoURL || ""}
                   alt=""
-                  className="w-12 h-12 rounded-full"
+                  className="w-20 h-20 rounded-full absolute right-6"
                 />
               </div>
-              <div className="flex-col justify-end ">
+              <div className="flex-col justify-end absolute right-6 bottom-14">
                 <div className="flex-col items-center justify-between">
-                  <p className="font-semibold">{user?.displayName}</p>
-                  <RiArrowDropDownLine className=" font-light" />
+                  <p className="font-semibold text-[20px] text-white">{user?.displayName}</p>
+                  {/* <RiArrowDropDownLine className=" font-light" /> */}
                 </div>
                 <p className="text-[+#5C635A] text-sm">{user?.email}</p>
               </div>

@@ -69,3 +69,27 @@
 .swiper-button-prev.custom-swiper-button {
   left: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .card{
+    height: 270px;
+  }
+
+  .custom-swiper {
+    padding: 0 0px;
+  }
+
+  .card-image {
+    width: 150px;
+    height: 100px;
+  }
+
+  .card-name {
+    font-size: 12px;
+  }
+
+  .card-button {
+    font-size: 12px;
+  }
+  
+}

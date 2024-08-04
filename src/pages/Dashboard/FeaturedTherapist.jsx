@@ -39,7 +39,7 @@ const FeaturedTherapist = () => {
           breakpoints={{
             // when window width is >= 320px
             320: {
-              slidesPerView: 1,
+              slidesPerView: 2,
               spaceBetween: 5,
             },
             // when window width is >= 640px
@@ -79,14 +79,14 @@ const FeaturedTherapist = () => {
                   alt={therapist.name}
                   className="card-image w-full h-40 object-cover rounded-lg mb-4 mx-auto"
                 />
-                <h4 className="text-lg font-semibold mb-2 ml-2">
+                <h4 className="text-md md:text-lg font-[500] md:font-semibold mb-2 ml-2">
                   {therapist.name}
                 </h4>
-                <p className="text-gray-600 flex items-center mb-2 text-sm ml-2">
+                <p className="text-gray-600 flex items-center mb-2 text-xs md:text-sm ml-2">
                   <MdLocationPin />
                   {therapist.address}
                 </p>
-                <p className="text-gray-600 flex items-center gap-2 ml-2 text-sm mb-12">
+                <p className="text-gray-600 flex items-center gap-2 ml-2 text-xs md:text-sm mb-12">
                   <FaCar />
                   Mobile & In-Studio
                 </p>

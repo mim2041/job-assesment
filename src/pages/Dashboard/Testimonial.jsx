@@ -1,4 +1,5 @@
 import { CiLocationOn } from "react-icons/ci";
+import testimonialImg from '../../assets/images/image 116.png';
 
 const Testimonial = ({ reviewPair }) => {
   return (
