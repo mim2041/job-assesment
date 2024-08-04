@@ -1,4 +1,3 @@
-import { CiLocationOn } from "react-icons/ci";
 import testimonialImg from '../../assets/images/image 116.png';
 import { FaLocationDot } from "react-icons/fa6";
 
@@ -9,7 +8,7 @@ const Testimonial = ({ reviewPair }) => {
         {reviewPair.map((review, i) => (
           <div key={i} className="flex flex-col">
             <div className="grid grid-cols-[3fr,9fr] items-center gap-3 border border-gray-300 rounded-lg bg-white p-3">
-              <img src={review.image} alt="profile" className="w-[130px] h-[140px]" />
+              <img src={testimonialImg} alt="profile" className="w-[130px] h-[140px]" />
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center gap-2">
                   <FaLocationDot />
