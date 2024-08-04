@@ -24,8 +24,8 @@ const PopularCities = () => {
             <div className="bg-white grid grid-cols-3 justify-between items-center border border-b-2 rounded-lg">
                 {
                     data?.map((city) => (
-                        <div key={city?.id} className=" mb-2 md:mb-4">
-                            <p className={`text-[#156BCA] underline text-[13px] md:text-[14px] px-1 md:px-6 py-3 ${city?.id && parseInt(city?.id) < 4 ? "mt-6" : ""}`}>{city?.name}</p>
+                        <div key={city?.id} className=" mb-4">
+                            <p className={`text-[#156BCA] underline text-[14px] px-6 py-3 ${city?.id && parseInt(city?.id) < 4 ? "mt-6" : ""}`}>{city?.name}</p>
                             {
                                 city?.id < 19 ? <hr className="mt-3"/> : ""
                             }

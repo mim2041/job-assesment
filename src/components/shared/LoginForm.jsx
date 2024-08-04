@@ -64,7 +64,7 @@ const LoginForm = () => {
               Email
             </label>
             <input
-              type="email"
+              type="text"
               id="email"
               placeholder="Enter your email"
               className="border p-2.5 placeholder:text-[#5C635A] rounded-lg  "

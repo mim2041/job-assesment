@@ -24,21 +24,45 @@ const FeaturedTherapist = () => {
       });
   }, []);
 
-  if (data.length == 0) {
+  if (data.length === 0) {
     return <div>Loading...</div>;
   }
 
-  
-
   return (
     <div className="my-6">
-      <h3 className="text-[18px] font-[500px] mb-2">Featured Therapist</h3>
+      <h3 className="text-[18px] font-[500] m-2">Featured Therapist</h3>
 
-      <div className="bg-white p-6 rounded-lg swiper-container ">
+      <div className="bg-white p-6 rounded-lg swiper-container">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={20}
-          slidesPerView={4}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 5,
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 5,
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            // when window width is >= 1024px
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            // when window width is >= 1280px
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -48,8 +72,8 @@ const FeaturedTherapist = () => {
           className="custom-swiper"
         >
           {data?.map((therapist, i) => (
-            <SwiperSlide key={i} className="">
-              <div className="card bg-white rounded-lg mx-4 relative text-left shadow-lg">
+            <SwiperSlide key={i}>
+              <div className="card bg-white rounded-lg lg:mx-4 relative text-left shadow-lg">
                 <img
                   src={therapist.image}
                   alt={therapist.name}
@@ -59,14 +83,14 @@ const FeaturedTherapist = () => {
                   {therapist.name}
                 </h4>
                 <p className="text-gray-600 flex items-center mb-2 text-sm ml-2">
-                  <MdLocationPin className="" />
+                  <MdLocationPin />
                   {therapist.address}
                 </p>
                 <p className="text-gray-600 flex items-center gap-2 ml-2 text-sm mb-12">
-                  <FaCar className="" />
+                  <FaCar />
                   Mobile & In-Studio
                 </p>
-                <button className="bg-[#D4E9FF] hover:bg-[#156BCA] text-black hover:text-white py-2 px-4 rounded-b-lg   transition-all underline w-full absolute bottom-0 right-0">
+                <button className="bg-[#D4E9FF] hover:bg-[#156BCA] text-black hover:text-white py-2 px-4 rounded-b-lg transition-all underline w-full absolute bottom-0 right-0">
                   See Details
                 </button>
               </div>

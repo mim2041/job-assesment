@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const { displayName, email, photoUrl } = user.reloadUserInfo;
+  const { displayName, email, photoURL } = user;
 
   console.log(user.reloadUserInfo);
   const handleLogOut = () => {
@@ -17,11 +17,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-20  px-8 py-5 flex items-center justify-between border-b bg-white">
+    <div className="hidden lg:flex h-20  px-8 py-5  items-center justify-between border-b bg-white">
       <div className="flex items-center justify-center gap-4">
         <div>
           <img
-            src={photoUrl || profile}
+            src={photoURL || profile}
             alt=""
             className="w-12 h-12 rounded-full"
           />
