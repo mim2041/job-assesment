@@ -1,36 +1,71 @@
 /* Add this to your CSS file or inside a <style> tag */
 
-.custom-swiper{
-    padding: 0 40px;
-    overflow: hidden;
+.custom-swiper {
+  padding: 0 40px;
+  overflow: hidden;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background: #ffffff;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
 }
 
 .card-image {
-    width: 200px;
-    height: 150px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .card-name {
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 500;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .card-button {
-    margin-top: 10px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.swiper-container {
+  position: relative;
+}
+
+.custom-swiper-button {
+  width: 40px;
+  height: 40px;
+  background-color: #156bca;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.custom-swiper-button:hover {
+  background-color: #0e4a8a;
+}
+
+.custom-swiper-button:after {
+  font-size: 18px;
+}
+
+.swiper-button-next.custom-swiper-button {
+  right: 10px;
+}
+
+.swiper-button-prev.custom-swiper-button {
+  left: 10px;
 }

@@ -1,27 +1,11 @@
 import login_image from '../assets/images/Rectangle 9593.png';
-import { FcGoogle } from 'react-icons/fc';
-import { FaFacebookF } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import LoginForm from '../components/shared/LoginForm';
 import bg_img from '../../src/assets/images/iPhone 14 & 15 Pro Max - 6.png';
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
-import { AiOutlineEyeInvisible } from 'react-icons/ai';
-import { BsEye } from 'react-icons/bs';
+
 
 
 const Login = () => {
-    const [ showPassword, setShowPassword ] = useState(false);
-
-    const { 
-        register, 
-        handleSubmit, 
-        formState: { errors } 
-    } = useForm();
-
-    const onSubmit = data => {
-        console.log(data)
-    };
+    
 
     return (
         <div>
@@ -48,7 +32,7 @@ const Login = () => {
                 </div>
             </div>
             {/* for Desktop view */}
-            <div className="hidden md:flex md:flex-col lg:flex-row lg:items-center lg:justify-between lg:px-36 h-screen my-20 gap-28">
+            <div className="hidden md:flex md:flex-row lg:items-center lg:justify-between lg:px-36 h-screen my-20 gap-28">
                 <div className='w-1/3'>
                     <LoginForm />
                 </div>

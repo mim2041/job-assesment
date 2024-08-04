@@ -1,0 +1,21 @@
+.form-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(200px);
+    z-index: 10;
+    transition: transform 3s ease-in-out;
+    opacity: 0;
+}
+
+.form-show {
+    transform: translateY(0%);
+    transition: transform 3s ease-in-out;
+    opacity: 1;
+}
+
+.form-hide {
+    transform: translateY(100%);
+    opacity: 0;
+}
