@@ -28,6 +28,8 @@ const FeaturedTherapist = () => {
     return <div>Loading...</div>;
   }
 
+  
+
   return (
     <div className="my-6">
       <h3 className="text-[18px] font-[500px] mb-2">Featured Therapist</h3>

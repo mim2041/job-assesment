@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const { displayName, email, photoURL } = user.reloadUserInfo;
+  const { displayName, email, photoUrl } = user.reloadUserInfo;
 
   console.log(user.reloadUserInfo);
   const handleLogOut = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="flex items-center justify-center gap-4">
         <div>
           <img
-            src={photoURL || profile}
+            src={photoUrl || profile}
             alt=""
             className="w-12 h-12 rounded-full"
           />

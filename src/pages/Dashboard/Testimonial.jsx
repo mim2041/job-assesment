@@ -5,7 +5,7 @@ const Testimonial = ({ reviewPair }) => {
         {reviewPair.map((review, i) => (
           <div key={i} className="flex flex-col">
             <div className="grid grid-cols-[4fr,8fr] gap-3 border border-gray-300 rounded-lg bg-white p-3">
-              <img src={review?.image} alt="profile" className="w-full " />
+              <img src={review?.image} alt="profile" className=" md:w-full " />
               <div className="flex flex-col space-y-1">
                 <p>{review?.address}</p>
                 <h4 className="text-[18px] font-[500px]">{review?.name}</h4>

@@ -7,11 +7,11 @@ const Dashboard = () => {
   return (
     <div
       style={{ fontFamily: "Poppins, sans-serif" }}
-      className="bg-[#EEF2F5] p-6 "
+      className="bg-[#EEF2F5] md:p-6 "
     >
       <TopSection />
       <FeaturedTherapist />
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-6">
         <div className="lg:w-1/2">
           <Testimonials />
         </div>
